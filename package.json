@@ -1,0 +1,51 @@
+{
+  "name": "lib-template",
+  "version": "1.0.0",
+  "description": "library template with typescript &amp; rollup",
+  "main": "dist/lib-template.umd.min.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/lib-template.es.min.js",
+  "files": [
+    "dist",
+    "README.md",
+    "dist/index.d.ts"
+  ],
+  "scripts": {
+    "test": "jest",
+    "clean": "rimraf ./dist ./playground/dist ./docs/dist ./docs/.vitepress/dist",
+    "build": "rollup -c rollup.config.js",
+    "build:dev": "cross-env node ./scripts/build.dev.js",
+    "build:doc": "cross-env NODE_ENV=production node ./scripts/build.doc.js",
+    "dev": "vite serve -c ./vite.config.js",
+    "dev:doc": "cross-env NODE_ENV=development vitepress --root=./docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zzh97228/lib-template.git"
+  },
+  "author": "lagabu <1002723879@qq.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zzh97228/lib-template/issues"
+  },
+  "homepage": "https://github.com/zzh97228/lib-template#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^15.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@types/jest": "^26.0.14",
+    "cross-env": "^7.0.2",
+    "jest": "^26.5.2",
+    "jest-css-modules": "^2.1.0",
+    "jest-serializer-html": "^7.0.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.29.0",
+    "rollup-plugin-typescript2": "^0.27.3",
+    "rollup-plugin-uglify": "^6.0.4",
+    "shelljs": "^0.8.4",
+    "ts-jest": "^26.4.1",
+    "typescript": "^4.0.3",
+    "vite": "^1.0.0-rc.4",
+    "vitepress": "^0.6.0",
+    "vue": "^3.0.0"
+  }
+}
