@@ -8,7 +8,7 @@ module.exports = {
     return prev;
   }, {}),
   // base 在生成docs时根据gh-pages的目录改变
-  base: process.env.NODEP_ENV === 'production' ? '/lib-template/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/lib-template/' : '/',
   head: [
     [
       'meta',
