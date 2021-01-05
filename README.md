@@ -29,11 +29,11 @@ Then open [http://localhost:8080](http://localhost:8080) in browser
 ### Documentation
 
 ```bash
-npm run dev:doc
+npm run docs:dev
 
 # or
 
-yarn dev:doc
+yarn docs:dev
 ```
 
 Then open [http://localhost:3000](http://localhost:3000) in browser
@@ -61,9 +61,9 @@ yarn build
 ## Build Documentation
 
 ```bash
-npm run build:doc
+npm run docs:build
 
 # or
 
-yarn build:doc
+yarn docs:build
 ```

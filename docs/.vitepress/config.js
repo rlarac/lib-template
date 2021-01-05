@@ -1,8 +1,14 @@
+const viteConfig = require('../../vite.config');
+
 module.exports = {
-  title: 'Documentation',
+  title: 'Lib',
   description: 'lib documentation',
+  alias: viteConfig.alias.reduce((prev, next) => {
+    prev[next.find] = next.replacement;
+    return prev;
+  }, {}),
   // base 在生成docs时根据gh-pages的目录改变
-  base: process.env.NODEP_ENV === 'production' ? '/YourPackageName/' : '/',
+  base: process.env.NODEP_ENV === 'production' ? '/lib-template/' : '/',
   head: [
     [
       'meta',
@@ -29,5 +35,20 @@ module.exports = {
   ],
   themeConfig: {
     // some options
+    repo: 'zzh97228/lib-template',
+    nav: [{ text: 'Guide', link: '/guide/functions' }],
+    sidebar: {
+      '/guide/': [
+        {
+          text: 'Introduction',
+          children: [
+            {
+              text: 'Functions',
+              link: '/guide/functions'
+            }
+          ]
+        }
+      ]
+    }
   },
 };

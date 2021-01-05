@@ -1,9 +1,14 @@
 const { resolve } = require('path');
 
 module.exports = {
-  alias: {
-    '/src/': resolve(__dirname, './src'),
+  alias: [
+    {
+      find: '/src',
+      replacement: resolve(__dirname, 'src'),
+    },
+  ],
+  root: resolve(__dirname, 'playground'),
+  server: {
+    port: 8080,
   },
-  root: resolve(__dirname, './playground'),
-  port: 8080
 };
