@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build-and-deploy:
@@ -17,7 +17,7 @@ jobs:
 
       - name: Install & Test
         run: yarn && yarn test
-        
+
       - name: Install SSH Client
         uses: webfactory/ssh-agent@v0.4.1 # This step installs the ssh client into the workflow run. There's many options available for this on the action marketplace.
         with:
